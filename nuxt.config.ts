@@ -3,7 +3,13 @@ import path from 'path';
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  css: ['~/assets/styles/main.css'],
+  extends: ['blog', 'core', 'site'],
+  dir: {
+    assets: '~/core/assets',
+    layouts: '~/site/layouts',
+    pages: '~/site/pages',
+  },
+  css: ['~/core/assets/styles/main.css'],
   modules: ['nuxt-primevue', '@nuxtjs/tailwindcss'],
   primevue: {
     options: {

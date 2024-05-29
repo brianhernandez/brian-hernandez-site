@@ -1,5 +1,9 @@
 export default {
-  content: ['.primevue_presets/**/*.{js,vue,ts}'],
+  content: [
+    '.primevue_presets/**/*.{js,vue,ts}',
+    './site/**/*.vue',
+    './blog/**/*.vue',
+  ],
   theme: {
     extend: {
       colors: {

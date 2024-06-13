@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     assets: '~/core/assets',
     layouts: '~/site/layouts',
     pages: '~/site/pages',
+    plugins: '~/core/plugins',
   },
   css: ['~/core/assets/styles/main.css'],
   modules: ['nuxt-primevue', '@nuxtjs/tailwindcss'],
@@ -17,4 +18,16 @@ export default defineNuxtConfig({
     },
     importPT: { from: path.resolve(__dirname, './.primevue_presets/lara/') },
   },
+  routeRules: {
+    '/services-and-pricing': {
+      redirect: 'https://brianhernandez.framer.website',
+    },
+  },
+  runtimeConfig: {
+    public: {
+      posthogPublicKey: 'phc_cSlajbmRxQt8Lzjq46wz7KJkHTqiGlGgcMg5jZ5bl9h',
+      posthogHost: 'https://us.i.posthog.com',
+    },
+  },
+  plugins: ['~/core/plugins/posthog.client.js'],
 });

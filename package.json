@@ -5,6 +5,8 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev -o",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -12,12 +14,17 @@
   "dependencies": {
     "nuxt": "^3.11.1",
     "posthog-js": "^1.139.1",
-    "primevue": "^3.51.0",
+    "primevue": "^3.53.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.11.1",
+    "@nuxt/eslint": "^0.5.7",
     "@nuxtjs/tailwindcss": "^6.11.4",
-    "nuxt-primevue": "^0.3.1"
+    "@types/eslint__js": "^8.42.3",
+    "eslint": "^9.11.1",
+    "nuxt-primevue": "^0.3.1",
+    "typescript": "^5.6.2"
   }
 }

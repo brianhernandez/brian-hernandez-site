@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import path from 'path'
+import Aura from '@primeuix/themes/aura'
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -18,24 +19,24 @@ export default defineNuxtConfig({
       // quotes: 'single',
       // semi: false,
       // jsx: true,
-
       stylistic: {
-        commaDangle: 'only-multiline',
+        // commaDangle: 'only-multiline',
       },
     },
   },
   css: ['~/core/assets/styles/main.css'],
-  modules: ['nuxt-primevue', '@nuxtjs/tailwindcss', '@nuxt/eslint'],
+  modules: ['@primevue/nuxt-module', '@nuxtjs/tailwindcss', '@nuxt/eslint'],
   primevue: {
     options: {
-      unstyled: true,
+      theme: {
+        preset: Aura
+      }
     },
-    importPT: { from: path.resolve(__dirname, './.primevue_presets/lara/') },
   },
   routeRules: {
-    // "/": {
-    //   redirect: "https://brianhernandez.contra.com",
-    // },
+    '/': {
+      redirect: 'https://brianhernandez.contra.com',
+    },
     '/services-and-pricing': {
       redirect: 'https://brianhernandez.framer.website',
     },
@@ -47,6 +48,7 @@ export default defineNuxtConfig({
     },
   },
   plugins: ['~/core/plugins/posthog.client.js'],
+  compatibilityDate: '2025-02-24',
 })
 
 // TODO: add prettier-plugin-tailwindcss plugin

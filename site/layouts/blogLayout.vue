@@ -1,6 +1,6 @@
 <template>
   <div>
-    The Blog Layout <br />
+    The Blog Layout. <br>
     <slot />
   </div>
 </template>
